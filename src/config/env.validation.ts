@@ -30,6 +30,9 @@ class EnvironmentVariables {
   FRONTEND_URL!: string;
 
   @IsString()
+  FRONTEND_URL_PRODUCTION!: string;
+
+  @IsString()
   SUPABASE_URL!: string;
 
   @IsString()
@@ -37,6 +40,9 @@ class EnvironmentVariables {
 
   @IsString()
   SUPABASE_SERVICE_ROLE_KEY!: string;
+
+  @IsString()
+  SUPABASE_JWT_SECRET!: string;
 
   @IsString()
   YOLO_API_URL!: string;
