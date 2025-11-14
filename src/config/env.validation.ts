@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { plainToInstance } from 'class-transformer';
 import {
   IsEnum,
   IsNumber,
   IsString,
+  IsOptional,
   validateSync,
   ValidationError,
 } from 'class-validator';
@@ -43,6 +43,15 @@ class EnvironmentVariables {
 
   @IsString()
   SUPABASE_JWT_SECRET!: string;
+
+  // Storage Configuration (optional - defaults to Supabase)
+  @IsOptional()
+  @IsString()
+  STORAGE_BASE_URL?: string;
+
+  @IsOptional()
+  @IsEnum(['supabase', 'azure', 'aws', 's3'])
+  STORAGE_PROVIDER?: string;
 
   @IsString()
   YOLO_API_URL!: string;
