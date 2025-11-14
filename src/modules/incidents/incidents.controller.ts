@@ -105,11 +105,14 @@ export class IncidentsController {
       example: {
         success: true,
         incident_id: '550e8400-e29b-41d4-a716-446655440000',
+        photo_url:
+          'https://vnahrflmnhhrixhkrgad.supabase.co/storage/v1/object/public/yolo_model/user123_1699999999.jpg',
         detected_category: 'bache',
         confidence: 0.93,
         category_code: 'POTHOLE',
-        priority: 'high',
         district_code: 'SJLUR',
+        url_resultado:
+          'https://res.cloudinary.com/xxx/yolo_annotated_550e8400.jpg',
         message: 'Incident created successfully',
       },
     },

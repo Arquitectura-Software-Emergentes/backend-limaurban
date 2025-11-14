@@ -130,9 +130,12 @@ export class IncidentsService {
     );
 
     if (!districtResult.district_code) {
-      throw new BadRequestException(
-        'Unable to detect district for provided coordinates',
-      );
+      const msg =
+        `Unable to detect district for provided coordinates (${dto.latitude}, ${dto.longitude}). ` +
+        'This usually means district boundaries are missing in the database (districts.boundary is NULL). ' +
+        'Import GeoJSON boundaries into the `districts.boundary` PostGIS column or provide a fallback (centroids).';
+      this.logger.warn(msg);
+      throw new BadRequestException(msg);
     }
 
     this.logger.log(`Calling YOLO API for detection...`);
@@ -216,6 +219,7 @@ export class IncidentsService {
       confidence: yoloResult.confianza,
       category_code: categoryCode,
       district_code: districtResult.district_code,
+      url_resultado: yoloResult.url_resultado,
       message: 'Incident created successfully',
     };
   }

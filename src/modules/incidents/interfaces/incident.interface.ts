@@ -6,6 +6,7 @@ export interface IncidentCreateResponse {
   confidence: number;
   category_code: string;
   district_code: string;
+  url_resultado: string;
   message: string;
 }
 
