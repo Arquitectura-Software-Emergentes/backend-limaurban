@@ -1,7 +1,6 @@
 export enum StorageBucket {
   YOLO_MODEL = 'yolo_model',
   INCIDENTS = 'incidents',
-  ATTACHMENTS = 'attachments',
   AVATARS = 'avatars',
 }
 
