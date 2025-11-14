@@ -6,7 +6,6 @@ import { SupabaseModule } from './modules/supabase/supabase.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { YoloModule } from './modules/yolo/yolo.module';
 import { IncidentsModule } from './modules/incidents/incidents.module';
-import { AttachmentsModule } from './modules/attachments/attachments.module';
 
 @Module({
   imports: [
@@ -18,7 +17,6 @@ import { AttachmentsModule } from './modules/attachments/attachments.module';
     AuthModule,
     YoloModule,
     IncidentsModule,
-    AttachmentsModule,
     HealthModule,
   ],
   controllers: [],
