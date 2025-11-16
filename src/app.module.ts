@@ -6,6 +6,7 @@ import { SupabaseModule } from './modules/supabase/supabase.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { YoloModule } from './modules/yolo/yolo.module';
 import { IncidentsModule } from './modules/incidents/incidents.module';
+import { GeospatialModule } from './modules/geospatial/geospatial.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { IncidentsModule } from './modules/incidents/incidents.module';
     AuthModule,
     YoloModule,
     IncidentsModule,
+    GeospatialModule,
     HealthModule,
   ],
   controllers: [],
